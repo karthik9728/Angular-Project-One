@@ -12,8 +12,24 @@
             <button class="btn btn-primary"[disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
             <br>
             <p>{{serverCreationStatus}}</p>
+            <label>Name</label>
+            <input type="text" class="form-control" [(ngModel)]="userName">
+            <br>
+            <button class="btn btn-primary" [disabled]="userName === ''"  (click)="onResetButton()">Reset User</button>
+            <br>
+            <p *ngIf="mark">Am Here</p>
+            <!-- <p *ngIf="mark;else noFindMe">Am Here</p>
+            <ng-template #noFindMe>
+                <p>Fine Me</p>
+            </ng-template> -->
+            <br>
+            <button class="btn btn-primary" (click)="onShowMe()">Show Me</button>
             <!-- <label>Server Name {{serverName}}</label>
             <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+            <br>
+            <br>
+            <p [ngStyle]="{backgroundColor:onColor()}">{{serverStatus}}</p>
+            <p [ngStyle]="{backgroundColor:onColor()}">{{serverStatus}}</p>
         </div>
     </div>
 </div>
